@@ -11,10 +11,18 @@ public class Ingredient {
     private String description;
     private int amount;
     @ManyToOne
-    private Recipe recipes;
+    private Recipe recipe;
 
     @OneToOne(fetch = FetchType.EAGER) // Fetch included for demonstration purposes only since it is default on this relationship
     private UnitOfMeasure unitOfMeasure;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getDescription() {
         return description;
@@ -30,5 +38,21 @@ public class Ingredient {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public UnitOfMeasure getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
+
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }
