@@ -21,6 +21,10 @@ public class Notes {
         this.recipeNotes = recipeNotes;
     }
 
+    public Notes(String recipeNotes) {
+        this.recipeNotes = recipeNotes;
+    }
+
     public Long getId() {
         return id;
     }
@@ -39,5 +43,9 @@ public class Notes {
 
     public void setRecipeNotes(String recipeNotes) {
         this.recipeNotes = recipeNotes;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }

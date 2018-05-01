@@ -54,13 +54,11 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         americanRecipe.setDirections("Mix all together");
         americanRecipe.setPrepTime(10);
         americanRecipe.setServings(2);
-        americanRecipe.getIngredients().add(new Ingredient("tacos", 20, americanRecipe, uom.get()));
-        americanRecipe.setNotes(new Notes(americanRecipe, "This is a great recipe note!"));
+        americanRecipe.addIngredient(new Ingredient("tacos", 20, uom.get()));
+        americanRecipe.setNotes(new Notes("This is a great recipe note!"));
 
         recipes.add(americanRecipe);
 
         return recipes;
     }
-
-
 }
