@@ -1,6 +1,7 @@
 package augustovictor.receipt.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -12,7 +13,7 @@ public class Category {
     private String description;
 
     @ManyToMany(mappedBy = "categories") // This is the property name from the other side of the relationship
-    private Set<Recipe> recipes;
+    private Set<Recipe> recipes = new HashSet<>();
 
     public Long getId() {
         return id;

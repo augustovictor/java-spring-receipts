@@ -16,6 +16,13 @@ public class Ingredient {
     @OneToOne(fetch = FetchType.EAGER) // Fetch included for demonstration purposes only since it is default on this relationship
     private UnitOfMeasure unitOfMeasure;
 
+    public Ingredient(String description, int amount, Recipe recipe, UnitOfMeasure unitOfMeasure) {
+        this.description = description;
+        this.amount = amount;
+        this.recipe = recipe;
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
     public Long getId() {
         return id;
     }
